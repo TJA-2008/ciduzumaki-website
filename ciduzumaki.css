@@ -1,0 +1,16 @@
+.bless {
+    font-style: italic;
+    color: white;
+
+}
+
+.l {
+    font-size: 25px;
+    color:  white;
+    font-style: bold;
+    font-family: "Times New Roman", Times, serif, Arieal, Helvetica, sans-serif;
+}
+
+.body {
+    background-image: url("https://imgs.search.brave.com/uPlzLhRHtPMeOiDvw3SUcWKBKqE5xhkuQLg9TZ-ibVk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzdiLzIx/Lzg4LzdiMjE4ODJj/YjE4NzdkZjlmNTYy/OWMwNjcyZDNmMDFl/LmpwZw");
+}
