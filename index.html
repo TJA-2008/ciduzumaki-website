@@ -1,38 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>
-    Ice Cream
-    </title>
-    <link rel="stylesheet" href="ciduzumaki.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Explore Lenovo laptop, gaming, monitor and accessory categories for shoppers in India with Ciduzumaki's Store.">
+  <title>Ciduzumaki's Store — Lenovo India tech picks</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5f0;
+      --ink: #22251f;
+      --muted: #73756e;
+      --line: #e8e5dd;
+      --lime: #d5f36a;
+      --dark: #22251f;
+      --white: #fffefa;
+      --serif: Georgia, "Times New Roman", serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    .disclosure { padding: 9px 18px; background: var(--dark); color: #f4f1e8; text-align: center; font-size: 11px; letter-spacing: .025em; }
+    .disclosure a { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
+    .header { position: sticky; z-index: 5; top: 0; border-bottom: 1px solid var(--line); background: rgba(247,245,240,.96); backdrop-filter: blur(12px); }
+    .nav { width: min(1240px, calc(100% - 48px)); min-height: 74px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .brand { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 900; letter-spacing: -.065em; white-space: nowrap; }
+    .brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 50%; background: var(--lime); font-size: 17px; }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: #575950; font-size: 12px; font-weight: 650; }
+    .nav-links a:hover, .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .nav-shop { padding: 11px 16px; border-radius: 100px; background: var(--dark); color: white; font-size: 11px; font-weight: 750; }
+    .hero { overflow: hidden; border-bottom: 1px solid var(--line); }
+    .hero-inner { width: min(1240px, calc(100% - 48px)); min-height: 510px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 45px; padding: 62px 0; }
+    .kicker { margin-bottom: 15px; color: #686b60; font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 570px; margin-bottom: 20px; font-family: var(--serif); font-size: clamp(51px, 7vw, 88px); font-weight: 400; letter-spacing: -.075em; line-height: .92; }
+    h1 span { color: #7b8f3c; font-style: italic; }
+    .hero-copy { max-width: 430px; margin-bottom: 27px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; padding: 14px 19px; border: 0; border-radius: 3px; background: var(--dark); color: white; font-size: 12px; font-weight: 750; }
+    .hero-cta:hover { background: #41443b; }
+    .hero-secondary { color: #4e5148; font-size: 11px; font-weight: 750; text-decoration: underline; text-underline-offset: 4px; }
+    .hero-note { margin: 16px 0 0; color: var(--muted); font-size: 10px; }
+    .hero-visual { position: relative; min-height: 360px; overflow: hidden; background: #dfdfd4; }
+    .lenovo-logo-panel { position: absolute; top: 50%; left: 50%; display: grid; width: min(72%, 390px); aspect-ratio: 4.2 / 1; place-items: center; background: #e2231a; transform: translate(-50%, -65%); }
+    .lenovo-logo { display: block; width: 82%; height: auto; filter: brightness(0) invert(1); }
+    .hero-number { position: absolute; top: 18px; left: 20px; color: #686b60; font-size: 10px; letter-spacing: .16em; }
+    .hero-caption { position: absolute; z-index: 2; left: 22px; bottom: 22px; max-width: 190px; font-family: var(--serif); font-size: 25px; line-height: 1.1; }
+    .section { width: min(1240px, calc(100% - 48px)); margin: auto; padding: 78px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 25px; }
+    .section-head h2 { margin-bottom: 0; font-family: var(--serif); font-size: clamp(34px, 4vw, 51px); font-weight: 400; letter-spacing: -.06em; }
+    .section-head p { max-width: 350px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .shop-tools { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 20px 0 26px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; }
+    .filter { padding: 9px 13px; border: 1px solid #dcd9d0; border-radius: 99px; background: transparent; color: #55584f; font-size: 10px; font-weight: 700; cursor: pointer; }
+    .filter:hover, .filter.active { border-color: var(--dark); background: var(--dark); color: white; }
+    .search { width: min(250px, 100%); padding: 11px 13px; border: 1px solid #dcd9d0; border-radius: 3px; outline-color: #84924f; background: var(--white); font-size: 11px; }
+    .products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 23px; }
+    .product { min-width: 0; }
+    .product-art { position: relative; display: grid; height: 270px; place-items: center; overflow: hidden; background: #eae7de; }
+    .product:nth-child(4n + 2) .product-art { background: #e3e4da; }
+    .product:nth-child(4n + 3) .product-art { background: #e8e0dc; }
+    .product:nth-child(4n) .product-art { background: #e5e4ec; }
+    .art-tag { position: absolute; top: 12px; left: 12px; z-index: 2; padding: 6px 8px; background: rgba(255,254,250,.85); font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .product-photo { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+    .product:hover .product-photo { transform: translateY(-4px); }
+    .product-meta { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding: 13px 1px 0; }
+    .product-title { margin-bottom: 5px; font-family: var(--serif); font-size: 19px; font-weight: 400; letter-spacing: -.025em; }
+    .product-type { margin: 0; color: var(--muted); font-size: 10px; }
+    .product-link { display: inline-block; margin-top: 12px; padding-bottom: 4px; border-bottom: 1px solid #9b9b8e; color: #55584f; font-size: 10px; font-weight: 750; }
+    .product-price { padding: 5px 7px; border: 1px solid #d8d5cb; color: #66695f; font-size: 8px; font-weight: 700; white-space: nowrap; }
+    .notice { margin: 22px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+    .editorial { background: var(--dark); color: #f7f5f0; }
+    .editorial-inner { width: min(1240px, calc(100% - 48px)); margin: auto; display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; padding: 68px 0; }
+    .editorial .kicker { color: #c6d48a; }
+    .editorial h2 { margin-bottom: 12px; font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); font-weight: 400; letter-spacing: -.055em; line-height: 1.04; }
+    .editorial p { color: #c6c7bf; font-size: 12px; line-height: 1.8; }
+    .guide-list { display: grid; }
+    .guide { display: flex; justify-content: space-between; gap: 18px; padding: 17px 0; border-bottom: 1px solid #4a4d44; }
+    .guide:first-child { border-top: 1px solid #4a4d44; }
+    .guide span:first-child { font-family: var(--serif); font-size: 19px; }
+    .guide span:last-child { align-self: center; color: #c6d48a; font-size: 10px; }
+    .guide-step { display: flex; align-items: start; gap: 15px; padding: 17px 0; border-bottom: 1px solid #4a4d44; }
+    .guide-step:first-child { border-top: 1px solid #4a4d44; }
+    .guide-number { display: grid; width: 27px; height: 27px; flex: 0 0 27px; place-items: center; border-radius: 50%; background: var(--lime); color: var(--dark); font-size: 10px; font-weight: 800; }
+    .guide-step strong { display: block; margin: 1px 0 5px; font-family: var(--serif); font-size: 18px; font-weight: 400; }
+    .guide-step span:last-child { color: #c6c7bf; font-size: 10px; line-height: 1.65; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: start; }
+    .about h2 { font-family: var(--serif); font-size: 38px; font-weight: 400; letter-spacing: -.055em; }
+    .about p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .disclosure-box { padding: 18px; border: 1px solid var(--line); background: var(--white); font-size: 11px; line-height: 1.7; }
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner { width: min(1240px, calc(100% - 48px)); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 27px 0; }
+    .footer-copy { margin: 5px 0 0; color: var(--muted); font-size: 9px; }
+    .footer-links { display: flex; gap: 18px; color: #575950; font-size: 10px; }
+    .toast { position: fixed; z-index: 10; right: 18px; bottom: 18px; max-width: min(350px, calc(100% - 36px)); padding: 14px 16px; background: var(--dark); color: white; box-shadow: 0 9px 30px #0003; font-size: 11px; line-height: 1.55; opacity: 0; pointer-events: none; transform: translateY(8px); transition: .18s ease; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .empty { grid-column: 1 / -1; padding: 50px 15px; color: var(--muted); text-align: center; font-size: 12px; }
+    @media (max-width: 760px) {
+      .nav { width: calc(100% - 32px); min-height: 64px; }
+      .nav-links { gap: 14px; font-size: 10px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .nav-shop { padding: 10px 12px; font-size: 10px; }
+      .hero-inner { width: calc(100% - 38px); grid-template-columns: 1fr; gap: 27px; padding: 48px 0; }
+      .hero-visual { min-height: 300px; }
+      .section { width: calc(100% - 38px); padding: 60px 0; }
+      .section-head { align-items: start; flex-direction: column; }
+      .shop-tools { align-items: stretch; flex-direction: column; }
+      .search { width: 100%; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 19px 13px; }
+      .product-art { height: 215px; }
+      .editorial-inner { width: calc(100% - 38px); grid-template-columns: 1fr; gap: 18px; padding: 54px 0; }
+      .about { grid-template-columns: 1fr; gap: 10px; }
+      .footer-inner { width: calc(100% - 38px); align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 440px) {
+      .brand { font-size: 16px; }
+      .nav-links a:last-child { display: none; }
+      .products { grid-template-columns: 1fr; }
+      .product-art { height: 260px; }
+    }
+  </style>
 </head>
+<body>
+  <div class="disclosure">The Lenovo link may earn Ciduzumaki's Store a commission. <a href="#affiliate-disclosure">Read our disclosure</a>.</div>
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="Ciduzumaki's Store home"><span class="brand-mark">C</span> Ciduzumaki's Store</a>
+      <div class="nav-links">
+        <a href="#shop">Explore categories</a>
+        <a href="#guides">How it works</a>
+        <a href="#affiliate-disclosure">Disclosure</a>
+      </div>
+      <a class="nav-shop" href="#shop">Explore categories ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Lenovo tech picks · India</div>
+          <h1>Find tech that fits <span>your world.</span></h1>
+          <p class="hero-copy">Explore Lenovo ThinkPad, PCs and tablets, and smartphones in one simple place.</p>
+          <div class="hero-actions">
+            <a class="hero-cta" href="https://lenovo-in.zlvv.net/c/8039367/616203/9634" target="_blank" rel="sponsored noopener noreferrer">Explore Lenovo picks <span aria-hidden="true">→</span></a>
+            <a class="hero-secondary" href="#guides">How it works</a>
+          </div>
+          <p class="hero-note">Independent affiliate publisher. Product availability, prices and delivery terms can change.</p>
+        </div>
+        <div class="hero-visual">
+          <span class="hero-number">LENOVO TECH PICKS / INDIA</span>
+          <div class="lenovo-logo-panel">
+            <img class="lenovo-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg" alt="Lenovo">
+          </div>
+          <div class="hero-caption">The right tech<br>for what’s next.</div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="shop">
+      <div class="section-head">
+        <div><div class="kicker">The Lenovo India edit</div><h2>Explore by category.</h2></div>
+        <p>Choose a category to explore, or search the Lenovo India range.</p>
+      </div>
+      <div class="shop-tools">
+        <div class="filters" role="group" aria-label="Filter products">
+          <button class="filter active" type="button" data-category="all">All categories</button>
+          <button class="filter" type="button" data-category="thinkpad">ThinkPad</button>
+          <button class="filter" type="button" data-category="pc-tablets">PCs &amp; Tablets</button>
+          <button class="filter" type="button" data-category="smartphones">Smartphones</button>
+        </div>
+        <label><span class="sr-only" style="position:absolute;left:-10000px">Search Lenovo picks</span><input class="search" id="product-search" type="search" placeholder="Search Lenovo picks…" autocomplete="off"></label>
+      </div>
+      <div class="products" id="product-grid" aria-live="polite"></div>
+      <p class="notice">The ThinkPad, PCs &amp; Tablets, and Smartphones cards and “Explore Lenovo picks” button use affiliate links. Product models, specifications, offers and availability may change.</p>
+    </section>
+    <section class="editorial" id="guides">
+      <div class="editorial-inner">
+        <div>
+          <div class="kicker">A simple way to explore</div>
+          <h2>Discover here.<br>Choose with confidence.</h2>
+          <p>Ciduzumaki's Store helps you find a product category to explore. Lenovo India handles product details, prices, payment, delivery and returns.</p>
+        </div>
+        <div class="guide-list">
+          <div class="guide-step"><span class="guide-number">01</span><span><strong>Explore</strong>Browse ThinkPad, PCs &amp; Tablets, or Smartphones.</span></div>
+          <div class="guide-step"><span class="guide-number">02</span><span><strong>Compare</strong>Review current specifications, price and availability on Lenovo India.</span></div>
+          <div class="guide-step"><span class="guide-number">03</span><span><strong>Shop</strong>Use an active affiliate link to continue to the retailer when available.</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section about" id="affiliate-disclosure">
+      <div><div class="kicker">Independent publisher notice</div><h2>Helpful picks.<br>Clear disclosure.</h2></div>
+      <div>
+        <p>Ciduzumaki's Store is an independent publisher creating a Lenovo-focused shopping guide for India. It is not Lenovo's official website and is not owned or operated by Lenovo.</p>
+        <div class="disclosure-box"><strong>Affiliate disclosure:</strong> The “Explore Lenovo picks” button and ThinkPad, PCs &amp; Tablets, and Smartphones category cards use affiliate links. Ciduzumaki's Store may earn a commission if you make a qualifying purchase after following one of these links, at no extra cost to you. Lenovo and its product names are trademarks of their respective owners. Check Lenovo India's current prices, specifications, availability, delivery and return terms before purchasing.</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div><a class="brand" href="#"><span class="brand-mark">C</span> Ciduzumaki's Store</a><p class="footer-copy">Independent Lenovo category guide for shoppers in India.</p></div>
+      <div class="footer-links"><a href="#shop">Explore categories</a><a href="#guides">How it works</a><a href="#affiliate-disclosure">Affiliate disclosure</a></div>
+    </div>
+  </footer>
+  <script>
+    const products = [
+      { id: "thinkpad", name: "ThinkPad", category: "thinkpad", type: "Lenovo ThinkPad laptops", tag: "Built for work", imageUrl: "https://p3-ofp.static.pub/ShareResource/thinkpad/Imgs/lenovo-thinkpad-brand-page-featured-thinkpads-2-update-jan-2025.jpg", imageAlt: "Lenovo ThinkPad X1 Carbon laptop, shown open and closed", affiliateUrl: "https://lenovo-in.zlvv.net/c/8039367/616206/9634" },
+      { id: "pc-tablets", name: "PCs & Tablets", category: "pc-tablets", type: "Lenovo computers and tablets", tag: "Explore the range", imageUrl: "https://ap-img.static.pub/ss/img/2026/10/09/img.20261009121831523242.jpg", imageAlt: "Lenovo Idea Tab product image", affiliateUrl: "https://lenovo-in.zlvv.net/c/8039367/616204/9634" },
+      { id: "smartphones", name: "Smartphones", category: "smartphones", type: "Smartphones · Brand not specified", tag: "Mobile devices", imageUrl: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=900&q=85", imageAlt: "Real-life photo of a smartphone; brand and model are not specified", affiliateUrl: "https://lenovo-in.zlvv.net/c/8039367/616205/9634" }
+    ];
+    const productGrid = document.getElementById("product-grid");
+    const searchInput = document.getElementById("product-search");
+    let activeCategory = "all";
 
-<body class= "body">
-    <h1 class= bless>
-        BLESSING ADU GYAMFI JNR'S POINT OF VIEW ABOUT ICE CREAM
-    </h1>
+    function renderProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+      const visibleProducts = products.filter(product => {
+        const matchesCategory = activeCategory === "all" || product.category === activeCategory;
+        const matchesQuery = `${product.name} ${product.category} ${product.type} ${product.tag}`.toLowerCase().includes(query);
+        return matchesCategory && matchesQuery;
+      });
 
-    <p class= l>
-        If we are talking about the best desert 
-        in the world then we should be talking about
-        Ice Creams. And not any type of Ice Cream but
-        either a chocolate or a strawberry ice cream.
-        Why do I choose ice cream as the best desert in the world?
-    </p>
+      productGrid.innerHTML = visibleProducts.length ? visibleProducts.map(product => `
+        <article class="product">
+          <div class="product-art">
+            <span class="art-tag">${product.tag}</span>
+            <img class="product-photo" src="${product.imageUrl}" alt="${product.imageAlt}" loading="lazy">
+          </div>
+          <div class="product-meta">
+            <div>
+              <h3 class="product-title">${product.name}</h3>
+              <p class="product-type">${product.type}</p>
+              ${product.affiliateUrl
+                ? `<a class="product-link" href="${product.affiliateUrl}" target="_blank" rel="sponsored noopener noreferrer">Explore Lenovo ${product.name} ↗</a>`
+                : `<span class="product-link">Category overview</span>`}
+            </div>
+            <span class="product-price">CATEGORY</span>
+          </div>
+        </article>`).join("") : '<p class="empty">No finds match that search. Try another style or category.</p>';
 
-    <p class= l>
-         Ice cream is the best desert in the world  because it  sweet and cold. 
-        It is also a good treat for a hot day.
-        Nowadays , it is very hot and having a cold ice cream 
-        is the best solution to this problem.
-         Ice cream is also good for your health because it has calcium in it.
-         Besides it makes me happy whenever I eat it. I also like ice cream 
-         because it is very delicious especially the strawberry and chocolate flavors.
-         And also it is very easy to make ice cream. You can make ice cream
-          at home or buy it from the store. Also when I eat it, it helps me forget my 
-          problems. Besides it easy  to make ice cream.
-    </p>
+    }
+
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelector(".filter.active").classList.remove("active");
+        button.classList.add("active");
+        activeCategory = button.dataset.category;
+        renderProducts();
+      });
+    });
+    searchInput.addEventListener("input", renderProducts);
+    renderProducts();
+  </script>
 </body>
 </html>
-
-
